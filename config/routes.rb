@@ -1,4 +1,11 @@
 Depot::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
+  get "store/index"
+
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
   resources :products
 
   # The priority is based upon order of creation:
@@ -11,9 +18,6 @@ Depot::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
 
   # Sample resource route with options:
   #   resources :products do
@@ -50,7 +54,7 @@ Depot::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'store#index', :as => 'store'
 
   # See how all your routes lay out with "rake routes"
 

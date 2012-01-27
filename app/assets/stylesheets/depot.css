@@ -1,4 +1,33 @@
 /* Global styles */
+#banner {
+  background: #99cc99;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #228822;
+  text-align: center; }
+  #banner .img {
+    float: left; }
+
+#columns {
+  background: #114411; }
+  #columns #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white; }
+  #columns #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #114411; }
+    #columns #side ul {
+      padding: 0; }
+      #columns #side ul li {
+        list-style: none; }
+        #columns #side ul li .a {
+          color: #bbaabb;
+          font-size: small; }
+
 #store #notice {
   color: black;
   border: 2px solid red;
@@ -67,4 +96,9 @@
 #store .entry.price {
   color: #4444aa;
   font-weight: bold;
-  margin-right: 2em; }
+  margin-right: 2em;
+  font-weight: bold; }
+#store .entry form {
+  display: inline; }
+  #store .entry form div {
+    display: inline; }

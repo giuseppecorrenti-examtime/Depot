@@ -21,6 +21,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'capybara'
+  
 end
 
 group :development do
@@ -30,7 +32,6 @@ end
 
 group :test do
   gem 'turn', :require => false
-  gem 'capybara'
   gem 'simplecov'
   gem 'simplecov-rcov'
   gem 'ci_reporter' 

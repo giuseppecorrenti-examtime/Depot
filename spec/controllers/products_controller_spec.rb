@@ -24,7 +24,12 @@ describe ProductsController do
   # Product. As you add validations to Product, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => 'Lorem Ipsum',
+      :description => 'Wibbles are fun!',
+      :image_url => 'lorem.jpg',
+      :price => 49.5
+    }
   end
   
   # This should return the minimal set of values that should be in the session

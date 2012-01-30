@@ -44,6 +44,7 @@ class LineItemsController < ApplicationController
     @cart = current_cart
     product = Product.find(params[:product_id])
     @cart.line_items.build(:product => product).save
+    reset_session_counter
     render :nothing => true
     
     # @line_item = LineItem.new(params[:line_item])

@@ -2,7 +2,12 @@
   %p#notice
     = notice
 		
-%h1 Your Pragmatic Catalog
+%h1 
+  ="Your Pragmatic Catalog"
+  - if session[:counter] > 5
+    %br
+    ="You visited this page " + pluralize(session[:counter],'time', 'times')
+
 
 -@products.each do |product|
   .entry

@@ -10,4 +10,16 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = @current_cart.id
       @current_cart
     end
+    
+    def reset_session_counter
+      session[:counter] = 0
+    end
+  
+    def increment_session_counter
+      if session[:counter].nil?
+        session[:counter] = 1
+      else 
+        session[:counter] += 1
+      end
+    end
 end

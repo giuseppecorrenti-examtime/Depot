@@ -1,0 +1,33 @@
+%html
+  %head
+    %title
+      Pragprog Books Online
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+%body#store
+  #banner
+    = image_tag("logo.png")
+    = @page_title || "Pragmatic Bookshelf"
+  #columns
+    #side
+      -if @current_cart
+        =link_to 'View Cart', cart_path(@current_cart)
+        %br
+      =link_to 'Home', store_path
+      %br
+      %a{:href => "http://www..../faq"}
+        FAQ
+      %br
+      %a{:href => "http://www..../news"}
+        News
+      %br
+      %a{href: "http://www..../contact"}
+        Contacts
+      %br
+      #time
+        = Time.current()
+      %br
+    #main
+      = yield
+      

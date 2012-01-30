@@ -83,7 +83,6 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
     json = @line_item.id
-    
     render :json => json
   end
 end

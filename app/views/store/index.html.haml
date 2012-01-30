@@ -1,15 +1,16 @@
 - if @notice
-	%p#notice
-		= notice
+  %p#notice
+    = notice
 		
 %h1 Your Pragmatic Catalog
 
 -@products.each do |product|
-	.entry
-		= image_tag(product.image_url)
-		%h3=product.title
-		=sanitize(product.description)
-		.price_line
-			%span.price
-				= number_to_currency product.price
-			%input.add_to_cart{:type=>"button", :value=>'Add to Cart', 'data-product-id' => product.id}
+  .entry
+    =image_tag product.image_url, 'data-product-id' => product.id, :class => 'images'
+    %h3
+      =product.title
+    =sanitize(product.description)
+    .price_line
+      %span.price
+        = number_to_currency product.price
+      %input.add_to_cart{:type=>"button", :value=>'Add to Cart', 'data-product-id' => product.id}

@@ -51,13 +51,6 @@ GEM
     chunky_png (1.2.5)
     ci_reporter (1.6.9)
       builder (>= 2.1.2)
-    coffee-rails (3.1.1)
-      coffee-script (>= 2.2.0)
-      railties (~> 3.1.0)
-    coffee-script (2.2.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.2.0)
     columnize (0.3.6)
     compass (0.12.alpha.4)
       chunky_png (~> 1.2)
@@ -226,7 +219,6 @@ DEPENDENCIES
   cancan
   capybara
   ci_reporter
-  coffee-rails (~> 3.1.1)
   compass (~> 0.12.alpha.0)
   database_cleaner
   devise

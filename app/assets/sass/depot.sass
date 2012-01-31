@@ -1,9 +1,14 @@
 /* Global styles
+ */
+
+body 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 #banner
-  background: #9c9
+  background: #AAB080
   padding: 10px
   border-bottom: 2px solid
-  font: small-caps 40px/40px "Times New Roman", serif
+  font-family: 'Kaushan Script', cursive
+  font-size: 48px
   color: #282
   text-align: center
 
@@ -11,19 +16,18 @@
     float: left
 
 #columns 
-  background: #141
+  background: #AAB080
 
   #main 
     margin-left: 17em
     padding: 1em
-    background: white
+    background: #E7E7E5
   #time
     color: #bab
   #side
     float: left
     padding: 1em 2em
     width: 13em
-    background: #141
 
     ul
       padding: 0
@@ -43,9 +47,10 @@
     background-color: #f0f0f0
     font: bold smaller sans-serif
   h1
-    font: 150% sans-serif
+    font: bold 150% sans-serif
+    padding-bottom: 28px
     color: #226
-    border-bottom: 3px dotted #77d
+    border-bottom: 1px solid #77d
 
 /* Styles for products/index
 
@@ -80,18 +85,20 @@
 /* An entry in the store catalog
 
 #store
-  &.entry
+  .entry
     overflow: auto
     margin-top: 1em
     border-bottom: 1px dotted #77d
-  &.title
+  .title
     font-size: 120%
     font-family: sans-serif
   .entry
+    border-bottom: 1px solid #77d
+    margin-bottom: 20px
     img
-      width: 80px
-      margin-right: 5px
-      margin-bottom: 5px
+      width: 120px
+      margin-right: 20px
+      margin-bottom: 20px
       float: left
     h3
       margin-top: 0
@@ -102,14 +109,14 @@
       margin-bottom: 0.8em
     .price_line
       clear: both
-      margin-bottom: 0.5em
+      margin-bottom: 40px
     .add_to_cart
-      position: relative
-    &.price
+      float: right
+    .price
       color: #44a
-      font-weight: bold
       margin-right: 2em
       font-weight: bold
+      float: right
     form
       display: inline
       div

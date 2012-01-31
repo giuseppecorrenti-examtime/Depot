@@ -1,7 +1,7 @@
 %h2 Your Pragmatic Cart
 %ul
-	- @cart.line_items.each do |item|
-		%li= item.product.title
+  - @cart.line_items.each do |item|
+    %li="#{item.quantity} &times; #{item.product.title}".html_safe		  
 
 %p#notice= notice
 

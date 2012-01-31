@@ -1,13 +1,13 @@
+= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Kaushan+Script'
 %html
   %head
     %title
       Pragprog Books Online
     = stylesheet_link_tag    "application"
     = javascript_include_tag 'application'
-    = csrf_meta_tags
+    = csrf_meta_tag
 %body#store
   #banner
-    = image_tag("logo.png")
     = @page_title || "Pragmatic Bookshelf"
   #columns
     #side
@@ -25,8 +25,6 @@
       %a{href: "http://www..../contact"}
         Contacts
       %br
-      #time
-        = Time.current()
       %br
     #main
       = yield

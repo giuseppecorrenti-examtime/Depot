@@ -1,104 +1,180 @@
-/* Global styles */
+/* Global styles
+ */
+/* line 4, ../sass/depot.sass */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 6, ../sass/depot.sass */
 #banner {
-  background: #99cc99;
+  background: #aab080;
   padding: 10px;
   border-bottom: 2px solid;
-  font: small-caps 40px/40px "Times New Roman", serif;
+  font-family: "Kaushan Script", cursive;
+  font-size: 48px;
   color: #228822;
-  text-align: center; }
-  #banner .img {
-    float: left; }
+  text-align: center;
+}
+/* line 15, ../sass/depot.sass */
+#banner .img {
+  float: left;
+}
 
+/* line 18, ../sass/depot.sass */
 #columns {
-  background: #114411; }
-  #columns #main {
-    margin-left: 17em;
-    padding: 1em;
-    background: white; }
-  #columns #side {
-    float: left;
-    padding: 1em 2em;
-    width: 13em;
-    background: #114411; }
-    #columns #side ul {
-      padding: 0; }
-      #columns #side ul li {
-        list-style: none; }
-        #columns #side ul li .a {
-          color: #bbaabb;
-          font-size: small; }
+  background: #aab080;
+}
+/* line 21, ../sass/depot.sass */
+#columns #main {
+  margin-left: 17em;
+  padding: 1em;
+  background: #e7e7e5;
+}
+/* line 25, ../sass/depot.sass */
+#columns #time {
+  color: #bbaabb;
+}
+/* line 27, ../sass/depot.sass */
+#columns #side {
+  float: left;
+  padding: 1em 2em;
+  width: 13em;
+}
+/* line 32, ../sass/depot.sass */
+#columns #side ul {
+  padding: 0;
+}
+/* line 35, ../sass/depot.sass */
+#columns #side ul li {
+  list-style: none;
+}
+/* line 38, ../sass/depot.sass */
+#columns #side ul li .a {
+  color: #bbaabb;
+  font-size: small;
+}
 
+/* line 42, ../sass/depot.sass */
 #store #notice {
   color: black;
   border: 2px solid red;
   padding: 1em;
   margin-bottom: 2em;
   background-color: #f0f0f0;
-  font: bold smaller sans-serif; }
+  font: bold smaller sans-serif;
+}
+/* line 49, ../sass/depot.sass */
 #store h1 {
-  font: 150% sans-serif;
+  font: bold 150% sans-serif;
+  padding-bottom: 28px;
   color: #222266;
-  border-bottom: 3px dotted #7777dd; }
+  border-bottom: 1px solid #7777dd;
+}
 
 /* Styles for products/index */
+/* line 58, ../sass/depot.sass */
 #product_list table {
-  border-collapse: collapse; }
-  #product_list table tr td {
-    padding: 5px;
-    vertical-align: top; }
+  border-collapse: collapse;
+}
+/* line 60, ../sass/depot.sass */
+#product_list table tr td {
+  padding: 5px;
+  vertical-align: top;
+}
+/* line 63, ../sass/depot.sass */
 #product_list .list_image {
   width: 60px;
-  height: 70px; }
+  height: 70px;
+}
+/* line 66, ../sass/depot.sass */
 #product_list .list_description {
-  width: 60%; }
-  #product_list .list_description dl {
-    margin: 0; }
-  #product_list .list_description dt {
-    color: #224444;
-    font-weight: bold;
-    font-size: larger; }
-  #product_list .list_description dd {
-    margin: 0; }
+  width: 60%;
+}
+/* line 68, ../sass/depot.sass */
+#product_list .list_description dl {
+  margin: 0;
+}
+/* line 70, ../sass/depot.sass */
+#product_list .list_description dt {
+  color: #224444;
+  font-weight: bold;
+  font-size: larger;
+}
+/* line 74, ../sass/depot.sass */
+#product_list .list_description dd {
+  margin: 0;
+}
+/* line 76, ../sass/depot.sass */
 #product_list .list_actions {
   font-size: x-small;
   text-align: right;
-  padding-left: 1em; }
+  padding-left: 1em;
+}
+/* line 80, ../sass/depot.sass */
 #product_list .list_line_even {
-  background: #e0f8f8; }
+  background: #e0f8f8;
+}
+/* line 82, ../sass/depot.sass */
 #product_list .list_line_odd {
-  background: #f8b0f8; }
+  background: #f8b0f8;
+}
 
 /* An entry in the store catalog */
-#store.entry {
+/* line 88, ../sass/depot.sass */
+#store .entry {
   overflow: auto;
   margin-top: 1em;
-  border-bottom: 1px dotted #7777dd; }
-#store.title {
+  border-bottom: 1px dotted #7777dd;
+}
+/* line 92, ../sass/depot.sass */
+#store .title {
   font-size: 120%;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
+/* line 95, ../sass/depot.sass */
+#store .entry {
+  border-bottom: 1px solid #7777dd;
+  margin-bottom: 20px;
+}
+/* line 98, ../sass/depot.sass */
 #store .entry img {
-  width: 80px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  float: left; }
+  width: 120px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+/* line 103, ../sass/depot.sass */
 #store .entry h3 {
   margin-top: 0;
   margin-bottom: 2px;
-  color: #222277; }
+  color: #222277;
+}
+/* line 107, ../sass/depot.sass */
 #store .entry p {
   margin-top: 0.5em;
-  margin-bottom: 0.8em; }
+  margin-bottom: 0.8em;
+}
+/* line 110, ../sass/depot.sass */
 #store .entry .price_line {
   clear: both;
-  margin-bottom: 0.5em; }
+  margin-bottom: 40px;
+}
+/* line 113, ../sass/depot.sass */
 #store .entry .add_to_cart {
-  position: relative; }
-#store .entry.price {
+  float: right;
+}
+/* line 115, ../sass/depot.sass */
+#store .entry .price {
   color: #4444aa;
-  font-weight: bold;
   margin-right: 2em;
-  font-weight: bold; }
+  font-weight: bold;
+  float: right;
+}
+/* line 120, ../sass/depot.sass */
 #store .entry form {
-  display: inline; }
-  #store .entry form div {
-    display: inline; }
+  display: inline;
+}
+/* line 122, ../sass/depot.sass */
+#store .entry form div {
+  display: inline;
+}

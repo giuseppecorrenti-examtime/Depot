@@ -1,3 +1,4 @@
 %h1=@line_item.product.title
 
+#update_line_item= link_to 'Update', line_item_path(@line_item), :method => :update, :remote => true
 #delete_line_item= link_to 'Delete', line_item_path(@line_item), :confirm => 'Are you sure?', :method => :delete, :remote => true

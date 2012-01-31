@@ -41,9 +41,11 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
+    puts "===================================   " + params[:product_id]
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @cart.line_items.build(:product => product).save
+    @line_item = @cart.add_product(product.id)
+    @line_item.save
     reset_session_counter
     render :nothing => true
     

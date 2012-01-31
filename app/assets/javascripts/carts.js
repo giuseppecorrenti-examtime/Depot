@@ -13,6 +13,6 @@ $(document).ready(function() {
   $('.cart_item').click(function (){
     var line_item_id = $(this).attr('id');        
     $.facebox({ ajax: '/line_items/'+ line_item_id + '/edit/' });
-
   });
+     
 });

@@ -70,111 +70,124 @@ body {
   color: #222266;
   border-bottom: 1px solid #7777dd;
 }
+/* line 54, ../sass/depot.sass */
+#store .cart_title {
+  font: 120% bold;
+}
+/* line 57, ../sass/depot.sass */
+#store .total_line {
+  text-align: right;
+}
+/* line 60, ../sass/depot.sass */
+#store .total_cell {
+  font-weight: bold;
+  border-top: 1px solid #559955;
+}
 
 /* Styles for products/index */
-/* line 58, ../sass/depot.sass */
+/* line 67, ../sass/depot.sass */
 #product_list table {
   border-collapse: collapse;
 }
-/* line 60, ../sass/depot.sass */
+/* line 69, ../sass/depot.sass */
 #product_list table tr td {
   padding: 5px;
   vertical-align: top;
 }
-/* line 63, ../sass/depot.sass */
+/* line 72, ../sass/depot.sass */
 #product_list .list_image {
   width: 60px;
   height: 70px;
 }
-/* line 66, ../sass/depot.sass */
+/* line 75, ../sass/depot.sass */
 #product_list .list_description {
   width: 60%;
 }
-/* line 68, ../sass/depot.sass */
+/* line 77, ../sass/depot.sass */
 #product_list .list_description dl {
   margin: 0;
 }
-/* line 70, ../sass/depot.sass */
+/* line 79, ../sass/depot.sass */
 #product_list .list_description dt {
   color: #224444;
   font-weight: bold;
   font-size: larger;
 }
-/* line 74, ../sass/depot.sass */
+/* line 83, ../sass/depot.sass */
 #product_list .list_description dd {
   margin: 0;
 }
-/* line 76, ../sass/depot.sass */
+/* line 85, ../sass/depot.sass */
 #product_list .list_actions {
   font-size: x-small;
   text-align: right;
   padding-left: 1em;
 }
-/* line 80, ../sass/depot.sass */
+/* line 89, ../sass/depot.sass */
 #product_list .list_line_even {
   background: #e0f8f8;
 }
-/* line 82, ../sass/depot.sass */
+/* line 91, ../sass/depot.sass */
 #product_list .list_line_odd {
   background: #f8b0f8;
 }
 
 /* An entry in the store catalog */
-/* line 88, ../sass/depot.sass */
+/* line 97, ../sass/depot.sass */
 #store .entry {
   overflow: auto;
   margin-top: 1em;
   border-bottom: 1px dotted #7777dd;
 }
-/* line 92, ../sass/depot.sass */
+/* line 101, ../sass/depot.sass */
 #store .title {
   font-size: 120%;
   font-family: sans-serif;
 }
-/* line 95, ../sass/depot.sass */
+/* line 104, ../sass/depot.sass */
 #store .entry {
   border-bottom: 1px solid #7777dd;
   margin-bottom: 20px;
 }
-/* line 98, ../sass/depot.sass */
+/* line 107, ../sass/depot.sass */
 #store .entry img {
   width: 120px;
   margin-right: 20px;
   margin-bottom: 20px;
   float: left;
 }
-/* line 103, ../sass/depot.sass */
+/* line 112, ../sass/depot.sass */
 #store .entry h3 {
   margin-top: 0;
   margin-bottom: 2px;
   color: #222277;
 }
-/* line 107, ../sass/depot.sass */
+/* line 116, ../sass/depot.sass */
 #store .entry p {
   margin-top: 0.5em;
   margin-bottom: 0.8em;
 }
-/* line 110, ../sass/depot.sass */
+/* line 119, ../sass/depot.sass */
 #store .entry .price_line {
   clear: both;
   margin-bottom: 40px;
 }
-/* line 113, ../sass/depot.sass */
+/* line 122, ../sass/depot.sass */
 #store .entry .add_to_cart {
   float: right;
 }
-/* line 115, ../sass/depot.sass */
+/* line 124, ../sass/depot.sass */
 #store .entry .price {
   color: #4444aa;
   margin-right: 2em;
   font-weight: bold;
   float: right;
 }
-/* line 120, ../sass/depot.sass */
+/* line 129, ../sass/depot.sass */
 #store .entry form {
   display: inline;
 }
-/* line 122, ../sass/depot.sass */
+/* line 131, ../sass/depot.sass */
 #store .entry form div {
   display: inline;
 }

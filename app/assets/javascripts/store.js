@@ -7,7 +7,6 @@ $(document).ready(function() {
 	
 	function ajax_call_add_to_cart (){
 		var product_id = $(this).attr('data-product-id');
-		alert('Product ID' + product_id);
 		$.ajax({
 		 type: 'POST',
 		 url:'/line_items',

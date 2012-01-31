@@ -15,6 +15,7 @@ $(document).ready(function() {
 		 },
 		 success : function(responseText) {
 		   alert('Added to cart');
+		   $('#cart').html(responseText);
 		 },
 		 
 		 dataType: "html"

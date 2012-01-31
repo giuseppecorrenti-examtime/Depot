@@ -46,21 +46,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(product.id)
     @line_item.save
     reset_session_counter
-    render :nothing => true
-    
-    # @line_item = LineItem.new(params[:line_item])
-    # Not using respond_to because we are using Ajax to add items to the cart 
-    
-    # respond_to do |format|
-      # if @line_item.save
-        # format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
-        # format.json { render json: @line_item, status: :created, location: @line_item }
-      # else
-        # format.html { render action: "new" }
-        # format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      # end
-    #end
-    
+    render @cart    
   end
 
   # PUT /line_items/1
@@ -82,9 +68,9 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    @cart = current_cart
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    json = @line_item.id
-    render :json => json
+    render @cart
   end
 end

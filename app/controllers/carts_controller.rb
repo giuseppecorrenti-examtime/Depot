@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   end
 
   # GET /carts/1
-  # GET /carts/1.json
+  # GET /carts/1.jsonl
   def show
     @cart = Cart.find(params[:id])
 

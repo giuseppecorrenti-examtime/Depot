@@ -16,7 +16,7 @@
       =product.title
     =sanitize(product.description)
     .price_line
-      %input.add_to_cart{:type=>"button", :value=>'Add to Cart', 'data-product-id' => product.id}
+      %input.add_to_cart{:type=>"button", :value=>'Add to Cart', :remote => true, 'data-product-id' => product.id}
       %span.price
         = number_to_currency product.price
       

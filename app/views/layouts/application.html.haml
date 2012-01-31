@@ -11,9 +11,9 @@
     = @page_title || "Pragmatic Bookshelf"
   #columns
     #side
-      -if @current_cart
-        =link_to 'View Cart', cart_path(@current_cart)
-        %br
+      #cart
+        =render @cart
+      
       =link_to 'Home', store_path
       %br
       %a{:href => "http://www..../faq"}

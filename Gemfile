@@ -27,7 +27,7 @@ end
 
 group :development do
   gem 'annotate'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+#  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do

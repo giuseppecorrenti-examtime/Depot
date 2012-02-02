@@ -1,30 +1,19 @@
 %tr
   %td=line_item.quantity
   %td
-    #edit_line_item{:class => 'modal hide fade in', :style=>"position: relative; top: auto; left: auto; margin-top: auto; margin: 0 auto 1"}
-      .modal_header
-        %a{ :href=>"#", :class => "close"}
-        &times;
+    .edit_line_item.modal.hide.fade.in
+      .modal-header
+        %a{ 'data-dismiss'=>"modal", :href=>"#", :class => "close"}&='×'
         %h3
           =line_item.product.title  
-        .modal-body
-          =form_for line_item do |f|
-            -if line_item.errors.any?
-              #error_explanation
-                %h2= "#{pluralize(@line_item.errors.count, "error")} prohibited this line_item from being saved:"
-                %ul
-                  - line_item.errors.full_messages.each do |msg|
-                    %li= msg
-                              
-            .field
-              = f.label :quantity
-              = f.number_field :quantity
-             
-            .actions
-              = f.submit 'Save'
-          
-        .modal-footer
-          %input.delete_line_item{:type=>"button", :value=>'Remove from Cart', 'data-line-item-id' => line_item.id}     
-
-    %a{ :id=>'edit', 'data-line-item-id'=> line_item.id, 'data-backdrop' => "true", 'data-controls-modal' => "event-modal", 'data-keyboard' => "true"} #{line_item.product.title}
+      .modal-body
+        =twitter_bootstrap_form_for line_item,:remote => true do |f|
+          =f.inputs do
+            =f.number_field :quantity
+          =f.actions do
+            =f.submit 'Save'
+            #delete_line_item{:class => 'btn',:href=>"#", 'data-dismiss'=>"modal", 'data-line-item-id' => line_item.id} Remove from Cart
+            =button_tag  'Cancel', :type => 'reset', :class => 'btn'
+                
+    %a#edit{  'data-line-item-id'=> line_item.id, 'data-backdrop' => "true", 'data-controls-modal' => "event-modal", 'data-keyboard' => "true"} #{line_item.product.title}
   %td= number_to_currency(line_item.total_price)

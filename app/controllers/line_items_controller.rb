@@ -53,16 +53,9 @@ class LineItemsController < ApplicationController
   # PUT /line_items/1.json
   def update
     @line_item = LineItem.find(params[:id])
-
-    respond_to do |format|
-      if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to store_path, notice: 'Line item was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
-      end
-    end
+    @line_item.update_attributes(params[:line_item])
+    @cart = current_cart
+    render @cart   
   end
 
   # DELETE /line_items/1

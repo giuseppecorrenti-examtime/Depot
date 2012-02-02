@@ -10,6 +10,7 @@ gem 'compass', "~> 0.12.alpha.0" # Look up the website
 gem 'cancan'
 gem 'execjs'
 gem 'therubyracer'
+gem 'twitter_bootstrap_form_for', "~> 1"
 
 # Gems used only for assets and not required
 # in production environments by default.

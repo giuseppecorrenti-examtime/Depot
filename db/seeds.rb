@@ -7,7 +7,18 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 # encoding: utf-8
+puts 'SETTING UP EXAMPLE USERS'
+user1 = User.create! :name => 'First User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user1.name
+user2 = User.create! :name => 'Other User', :email => 'otheruser@test.com', :password => 'please', :password_confirmation => 'please'
+puts 'New user created: ' << user2.name
+user1.save
+user2.save
+
+puts 'REMOVING ALL PRODUCTS'
 Product.delete_all
+
+puts 'SETTING UP EXAMPLE PRODUCTS'
 Product.create(title: 'CoffeeScript',
   description: 
     %{<p>

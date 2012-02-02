@@ -11,6 +11,7 @@
     = csrf_meta_tags
     
 %body
+  =render :partial => "shared/flash_messages", :locals => {:flash => flash}
   .topbar
     .topbar-inner
       .container-fluid
@@ -30,13 +31,15 @@
     .sidebar
       .well
         #cart
-          =render @cart 
+          - if !@cart.nil?
+            =render @cart 
     .content
       .hero-unit
         %h1 Your Pragmatic Catalog
       .row
         .span16
-          =render @products
+          - if !@products.nil?
+            =render @products
       .row
       %footer
         - if session[:counter] > 5

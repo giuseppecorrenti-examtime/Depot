@@ -2,4 +2,4 @@ This is a training exercise!!!
 
 Implementation of the Depot application as described on the PragProg book with some modifications to reflect the technologies used by ExamTime.
 
-- Haml, Sass, RSpec, Ajax, Twitter Bootstrap 
+- Haml, Sass, RSpec, Twitter Bootstrap 

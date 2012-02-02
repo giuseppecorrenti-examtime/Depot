@@ -1,14 +1,3 @@
-- if @notice
-  %p#notice
-    = notice
-		
-%h1 
-  ="Your Pragmatic Catalog"
-  - if session[:counter] > 5
-    %br
-    ="You visited this page " + pluralize(session[:counter],'time', 'times')
-
-
 -@products.each do |product|
   .entry
     =image_tag product.image_url, 'data-product-id' => product.id, :class => 'images'
@@ -16,7 +5,7 @@
       =product.title
     =sanitize(product.description)
     .price_line
-      %input.add_to_cart{:type=>"button", :value=>'Add to Cart', :remote => true, 'data-product-id' => product.id}
+      %a
+        #add_to_cart{ :class => "btn btn-primary btn-large", :value=>'Add to Cart', :remote => true, 'data-product-id' => product.id}
       %span.price
         = number_to_currency product.price
-      

@@ -1,76 +1,15 @@
 /* Global styles
- */
 
-body 
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-#banner
-  background: #AAB080
-  padding: 10px
-  border-bottom: 2px solid
-  font-family: 'Kaushan Script', cursive
-  font-size: 48px
-  color: #282
-  text-align: center
+.container-fluid
+  .sidebar
+    padding-top: 40px
+    position: fixed
 
-  .img
-    float: left
-
-#columns 
-  background: #AAB080
+.entry
+  overflow: auto
+  margin-top: 1em
+  border-bottom: 1px dotted #77d
   
-  #cart
-    font-size: smaller
-    color: white
-    table
-      border-top: 1px dotted #595
-      border-bottom: 1px dotted #595
-      margin-bottom: 10px      
-      
-  #main 
-    margin-left: 17em
-    padding: 1em
-    background: #E7E7E5
-  #time
-    color: #bab
-  #side
-    float: left
-    padding: 1em 2em
-    width: 13em
-
-    ul
-      padding: 0
-
-      li
-        list-style: none
-
-        .a
-          color: #bab
-          font-size: small
-#store
-  #notice
-    color: #000
-    border: 2px solid red
-    padding: 1em
-    margin-bottom: 2em
-    background-color: #f0f0f0
-    font: bold smaller sans-serif
-  h1
-    font: bold 150% sans-serif
-    padding-bottom: 28px
-    color: #226
-    border-bottom: 1px solid #77d
-  .cart_title
-    font: 120% bold      
-  .item_price
-  .total_line
-    text-align: right    
-  .total_line
-  .total_cell
-    font-weight: bold
-    border-top: 1px solid #595
-
-/* Styles for products/index
-
 #product_list
   table
     border-collapse: collapse
@@ -102,20 +41,15 @@ body
 /* An entry in the store catalog
 
 #store
-  .entry
-    overflow: auto
-    margin-top: 1em
-    border-bottom: 1px dotted #77d
+  
   .title
     font-size: 120%
     font-family: sans-serif
   .entry
-    border-bottom: 1px solid #77d
-    margin-bottom: 20px
     img
-      width: 120px
-      margin-right: 20px
-      margin-bottom: 20px
+      width: 80px
+      margin-right: 5px
+      margin-bottom: 5px
       float: left
     h3
       margin-top: 0
@@ -126,16 +60,15 @@ body
       margin-bottom: 0.8em
     .price_line
       clear: both
-      margin-bottom: 40px
+      margin-bottom: 0.5em
     .add_to_cart
-      float: right
+      position: relative
     .price
       color: #44a
+      font-weight: bold
       margin-right: 2em
       font-weight: bold
-      float: right
     form
       display: inline
       div
         display: inline
-      

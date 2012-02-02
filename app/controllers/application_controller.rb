@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :current_cart
+  before_filter :product_list
   
   private
+    def product_list
+      @product_list = Cart.find(session[:cart_id])
+      @product_list
+    end
+    
     def current_cart
       @current_cart = Cart.find(session[:cart_id])      
     rescue ActiveRecord::RecordNotFound

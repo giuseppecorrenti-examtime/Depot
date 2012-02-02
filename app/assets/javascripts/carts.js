@@ -5,10 +5,9 @@ $(document).ready(function() {
     }
   });
   
-  
-	$('.item_title').live('click',function (){
-    var line_item_id = $(this).attr('data-line-item-id');        
-    $.facebox({ ajax: '/line_items/'+ line_item_id + '/edit/' });
+  $(document).live('click', '#edit_line_item',function(){
+  	var line_item_id = $(this).attr('data-line-item-id');
+  	$('#edit_line_item').modal('show');
   });
      
   $(document).on('click','.delete_line_item', function() {
@@ -26,6 +25,5 @@ $(document).ready(function() {
      
     });
   });
-
- 
+  
 });

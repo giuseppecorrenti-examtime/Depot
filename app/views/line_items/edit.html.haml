@@ -1,5 +1,10 @@
-%h1=@line_item.product.title
-
-= render 'form'
-
-%input.delete_line_item{:type=>"button", :value=>'Remove from Cart', 'data-line-item-id' => @line_item.id}
+#edit_line_items{:class => 'modal hide fade in', :style=>"position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1"}
+  .modal_header
+    %a{ :href=>"#", :class => "close"}
+      &times;
+    %h3
+      =@line_item.product.title   
+  .modal-body
+    = render 'form'
+  .modal-footer
+    %input.delete_line_item{:type=>"button", :value=>'Remove from Cart', 'data-line-item-id' => @line_item.id}

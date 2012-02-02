@@ -23,8 +23,8 @@ $(document).ready(function() {
 		});
 	};
  	
- 	$('.add_to_cart').click( ajax_call_add_to_cart );
-     
+ 	$('#add_to_cart').click( ajax_call_add_to_cart );
+    $('.product_title').click( ajax_call_add_to_cart );
 	$('.images').click( ajax_call_add_to_cart );
 	
 });

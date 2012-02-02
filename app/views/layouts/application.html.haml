@@ -1,47 +1,44 @@
-= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Kaushan+Script'
 %html
+  -lang="en"
+  -debug="true"
+  %link{"rel" => "stylesheet", "href" => "http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css", "type" => "text/css"}
+  
   %head
     %title
       Pragprog Books Online
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag    "depot"
     = javascript_include_tag 'application'
-    = csrf_meta_tag
-%body#store
-  #banner
-    = @page_title || "Pragmatic Bookshelf"
-  #columns
-    #side
-      #user_nav
-        - if user_signed_in?
-          ="Signed as #{current_user.email}."
+    = csrf_meta_tags
+    
+%body
+  .topbar
+    .topbar-inner
+      .container-fluid
+        %a.brand{:href => store_path}
+          =@page_title || "Pragmatic Bookshelf"
+        %ul.nav
+          %li.active
+          %li
+            %a{:href => "http://www..../faq"}FAQ     
+          %li
+            %a{:href => "http://www..../news"}News
+          %li
+            %a{href: "http://www..../contact"}Contacts         
+        %p.pull-right
+          Logged in as User
+  .container-fluid
+    .sidebar
+      .well
+        #cart
+          =render @cart 
+    .content
+      .hero-unit
+        %h1 Your Pragmatic Catalog
+      .row
+        .span16
+          =render @products
+      .row
+      %footer
+        - if session[:counter] > 5
           %br
-          ="Not you?"
-          =link_to "Sign out", destroy_user_session_path, :method => 'Delete'
-        - else
-          =link_to "Sign up", new_user_registration_path
-          ="or"
-          =link_to "Sign in", new_user_session_path
-         
-      #cart
-        - if !@cart.nil?
-          =render @cart    
-      
-      =link_to 'Home', store_path
-      %br
-      %a{:href => "http://www..../faq"}
-        FAQ
-      %br
-      %a{:href => "http://www..../news"}
-        News
-      %br
-      %a{href: "http://www..../contact"}
-        Contacts
-      %br
-      %br
-    #main
-      #notice
-        =notice
-      #alert
-        =alert
-      = yield
-      
+          ="You visited this page " + pluralize(session[:counter],'time', 'times')      

@@ -55,7 +55,7 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
 
     respond_to do |format|
-      if @line_item.update_attributes(params[:line_item])        
+      if @line_item.update_attributes(params[:line_item])
         format.html { redirect_to store_path, notice: 'Line item was successfully updated.' }
         format.json { head :ok }
       else

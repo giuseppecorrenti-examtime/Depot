@@ -1,4 +1,7 @@
-class CartsController < ApplicationController
+class CartsController < ApplicationController  
+  
+  load_and_authorize_resource
+  
   # GET /carts
   # GET /carts.json
   def index

@@ -1,5 +1,6 @@
 .cart_title 
-  Your Cart
+  = current_user.name
+  = "Cart"
 
 %table
   =render(cart.line_items)

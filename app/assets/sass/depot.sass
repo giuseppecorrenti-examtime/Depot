@@ -1,74 +1,40 @@
 /* Global styles
+body
+  padding-top: 50px
+  
+input, textarea, select, .uneditable-input
+  height: 25px    
 
 .container-fluid
   .sidebar
-    padding-top: 40px
+    padding-top: 102px
     position: fixed
+    
+/* Store Catalog
 
-.entry
-  overflow: auto
-  margin-top: 1em
-  border-bottom: 1px dotted #77d
-  
 #product_list
-  table
-    border-collapse: collapse
-    tr td
-      padding: 5px
-      vertical-align: top
-  .list_image
-    width: 60px
-    height: 70px
-  .list_description
-    width: 60%
-    dl
-      margin: 0
-    dt
-      color: #244
-      font-weight: bold
-      font-size: larger
-    dd
-      margin: 0
-  .list_actions
-    font-size: x-small
-    text-align: right
-    padding-left: 1em
-  .list_line_even
-    background: #e0f8f8
-  .list_line_odd
-    background: #f8b0f8
-
-/* An entry in the store catalog
-
-#store
-  
-  .title
-    font-size: 120%
-    font-family: sans-serif
-  .entry
+  .product_entry
+    margin-bottom: 20px
     img
       width: 80px
       margin-right: 5px
       margin-bottom: 5px
       float: left
-    h3
+    h2
       margin-top: 0
       margin-bottom: 2px
-      color: #227
+      
     p
       margin-top: 0.5em
       margin-bottom: 0.8em
+      
     .price_line
       clear: both
       margin-bottom: 0.5em
     .add_to_cart
       position: relative
     .price
-      color: #44a
       font-weight: bold
       margin-right: 2em
       font-weight: bold
-    form
-      display: inline
-      div
-        display: inline
+      

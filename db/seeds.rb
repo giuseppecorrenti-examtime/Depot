@@ -7,11 +7,19 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 # encoding: utf-8
+
+puts 'SETTING UP USER ROLES'
+[:admin, :customer].each { |r| Role.create(:name => r) }
+
 puts 'SETTING UP EXAMPLE USERS'
-user1 = User.create! :name => 'First User', :email => 'user@test.com', :password => 'please', :password_confirmation => 'please'
+user1 = User.create! :name => 'First User', :email => 'a@a.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user1.name
-user2 = User.create! :name => 'Other User', :email => 'otheruser@test.com', :password => 'please', :password_confirmation => 'please'
+user2 = User.create! :name => 'Other User', :email => 'b@b.com', :password => 'please', :password_confirmation => 'please'
 puts 'New user created: ' << user2.name
+
+user1.roles << Role.find_by_name('admin')
+user2.roles << Role.find_by_name('customer')
+
 user1.save
 user2.save
 

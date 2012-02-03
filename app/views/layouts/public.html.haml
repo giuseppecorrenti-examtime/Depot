@@ -10,7 +10,7 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     
-%body
+%body 
   =render :partial => "shared/flash_messages", :locals => {:flash => flash}
   .topbar
     .topbar-inner
@@ -38,23 +38,9 @@
                 - else
                   %li= link_to 'Sign up', new_user_registration_path
                   %li= link_to 'Sign in', new_user_session_path        
-  .container-fluid
-    .sidebar
-      .well
-        #cart
-          - if !@cart.nil?
-            =render @cart 
+  .container-fluid     
     .content
-      .hero-unit
-        %h1 Your Pragmatic Catalog
-      .row
-        .span16
-          #product_list
-            - if !@products.nil?
-              =render @products
-      .row
-     
-      %footer        
-        - if session[:counter] > 5
-          %br
-          ="You visited this page " + pluralize(session[:counter],'time', 'times')      
+      .hero-unit        
+        =yield     
+  %footer 
+        

@@ -1,7 +1,5 @@
 %h1 Editing cart
 
-= render 'form'
-
 %ul
   - @cart.line_items.each do |item|
     %li.cart_item{:id => item.id}=item.product.title

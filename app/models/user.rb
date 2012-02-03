@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   has_one :cart,  :dependent => :destroy
+  has_and_belongs_to_many :roles
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -10,4 +11,9 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  
+  def role?(role)  
+    roles.any? { |r| r.name.underscore.to_sym == role }
+  end  
+  
 end

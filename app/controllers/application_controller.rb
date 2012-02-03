@@ -1,9 +1,24 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+    
   before_filter :current_cart
   
-  private    
+  # Authenticate user before being able to access the website
+  before_filter :authenticate_user!
+   
+  #Change the layout depending on the context (Devise or not?)
+  layout :set_from_context
+  
+  private
+    def set_from_context
+      if devise_controller?
+        layout = 'public'
+      else
+        layout = 'application'
+      end
+      layout      
+    end  
+      
     def current_cart
       @current_cart = Cart.find(session[:cart_id])      
     rescue ActiveRecord::RecordNotFound

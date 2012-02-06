@@ -42,8 +42,8 @@
     .sidebar
       .well
         #cart
-          - if !@cart.nil?
-            =render @cart 
+          - if !@current_cart.nil?
+            =render @cart         
     .content
       .hero-unit
         %h1 Your Pragmatic Catalog

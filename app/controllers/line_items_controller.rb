@@ -43,11 +43,13 @@ class LineItemsController < ApplicationController
 
   # POST /line_items
   # POST /line_items.json
-  def create
+  def create    
     @cart = current_cart
+    puts "=====================" + @cart.inspect
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
+    @line_item = @cart.add_product(product.id)    
     @line_item.save
+    puts "---------------------" + @line_item.inspect
     reset_session_counter
     render @cart    
   end
@@ -66,6 +68,7 @@ class LineItemsController < ApplicationController
   def destroy
     @cart = current_cart
     @line_item = LineItem.find(params[:id])
+    puts "=============\nLine Item: " + @line_item.inspect
     @line_item.destroy
     render @cart
   end

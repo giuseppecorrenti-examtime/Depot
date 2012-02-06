@@ -59,16 +59,10 @@ class CartsController < ApplicationController
   # PUT /carts/1
   # PUT /carts/1.json
   def update
-    @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
+    @cart = current_cart
+    @cart.line_items.each do |item|
+      @line_item = LineItem.find_by_id(item.id)
+      @line_item.destroy
     end
   end
 
@@ -76,10 +70,9 @@ class CartsController < ApplicationController
   # DELETE /carts/1.json
   def destroy
     @cart = current_cart
-    @cart.destroy
-    
-    session[:cart_id] = nil
-    render @cart
-    
+    @cart.destroy        
+#    session[:cart_id] = nils
+    @cart = current_cart
+    render @cart    
   end
 end

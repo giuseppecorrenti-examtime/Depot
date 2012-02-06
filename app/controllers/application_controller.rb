@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
     
   before_filter :current_cart
-  
+
   # Authenticate user before being able to access the website
   before_filter :authenticate_user!
    
@@ -18,14 +18,21 @@ class ApplicationController < ActionController::Base
       end
       layout      
     end  
-      
+    
     def current_cart
-      @current_cart = Cart.find(session[:cart_id])      
-    rescue ActiveRecord::RecordNotFound
-      @current_cart = Cart.create
-      session[:cart_id] = @current_cart.id
-      @current_cart
+      if current_user             
+        @current_cart = Cart.find_by_user_id(current_user.id)
+        if @current_cart.nil?             
+          @current_cart = Cart.create          
+          @current_cart.user_id = current_user.id
+          @current_cart.save
+        end             
+        @current_cart    
+      else
+        nil
+      end
     end
+              
     
     def reset_session_counter
       session[:counter] = 0

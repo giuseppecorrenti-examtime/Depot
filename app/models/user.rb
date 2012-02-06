@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name, :email, :case_sensitive => false
   has_one :cart,  :dependent => :destroy
   has_and_belongs_to_many :roles
+  after_create :add_default_role
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -15,5 +16,9 @@ class User < ActiveRecord::Base
   def role?(role)  
     roles.any? { |r| r.name.underscore.to_sym == role }
   end  
+  
+  def add_default_role
+    roles << Role.find_by_name('customer') 
+  end
   
 end

@@ -7,12 +7,40 @@ class Ability
     if user.role? :admin      
       can :manage, :all    
     elsif user.role? :customer
-      can :read, [Product,Role,User]
-      can :manage, LineItem
-      can :manage, @cart, {:user_id => user.id}     
-    end
-      # A Customer has to be able to read Products and Roles      
-      # A Customer has to be able to manage his own cart
+      # A Customer has to be able to read Products and Roles
+      can :read, [Product,Role]  
+      # A Customer has to be able to manage his own cart    
+      can :create, Cart
+      can :read, Cart do |cart|
+        cart.id == user.cart.id
+      end
+      can :update, Cart do |cart|
+        cart.id == user.cart.id
+      end
+      can :destroy, Cart do |cart|
+        puts "===================" + user.inspect
+        puts "\n"
+        puts "===================" + user.cart.inspect
+        cart.id == user.cart.id              
+      end
+      
+      
+      # A Customer has to be able to manage the line items of his own cart   
+      can :create, LineItem  
+      can :read, LineItem do |item|
+        item.cart_id == user.cart.id
+      end  
+      can :update, LineItem do |item|
+        item.cart_id == user.cart.id
+      end 
+      can :destroy, LineItem do |item|
+        puts "===================" + item.inspect
+        puts "\n"
+        puts "===================" + user.cart.inspect
+        item.cart_id == user.cart.id
+      end         
+     
+    end         
     
   end  
   

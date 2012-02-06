@@ -37,6 +37,7 @@ group :test do
   gem 'simplecov-rcov'
   gem 'ci_reporter' 
   gem 'spork'
+  gem 'factory_girl_rails', "~> 1.2"
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-livereload'

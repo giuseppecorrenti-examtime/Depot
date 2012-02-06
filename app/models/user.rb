@@ -1,8 +1,14 @@
 class User < ActiveRecord::Base
+  # Validations
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
+  
+  
+                      
+  # Associations
   has_one :cart,  :dependent => :destroy
   has_and_belongs_to_many :roles
+  
   after_create :add_default_role
   
   # Include default devise modules. Others available are:

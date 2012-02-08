@@ -5,7 +5,6 @@
     %p
       =sanitize(product.description)
   .price_line
-    %a
-      .add_to_cart{ :class => "btn btn-primary btn-large", :remote => 'true', 'data-product-id' => product.id} Add to Cart
+    %button{:id => "add_prod_#{product.id}", :class => "add_to_cart btn btn-primary btn-large", :remote => 'true', 'data-product-id' => product.id }Add to Cart
     %span.price
       = number_to_currency product.price

@@ -17,10 +17,7 @@ class Ability
       can :update, Cart do |cart|
         cart.id == user.cart.id
       end
-      can :destroy, Cart do |cart|
-        puts "===================" + user.inspect
-        puts "\n"
-        puts "===================" + user.cart.inspect
+      can :destroy, Cart do |cart|        
         cart.id == user.cart.id              
       end
       
@@ -33,10 +30,7 @@ class Ability
       can :update, LineItem do |item|
         item.cart_id == user.cart.id
       end 
-      can :destroy, LineItem do |item|
-        puts "===================" + item.inspect
-        puts "\n"
-        puts "===================" + user.cart.inspect
+      can :destroy, LineItem do |item|        
         item.cart_id == user.cart.id
       end         
      

@@ -20,4 +20,5 @@ class Cart < ActiveRecord::Base
   def owner
     return user
   end
+  
 end

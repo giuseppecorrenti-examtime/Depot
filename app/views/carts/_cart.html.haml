@@ -1,13 +1,14 @@
-.cart_title 
+#cart_title 
   = current_user.name
   = "Cart"
 
-%table
+%table#line_items
   =render(cart.line_items)
   
-  %tr.total_line
+  %tr#total_line
     %td{:colspan => 2} Total
-    %td.total_cell= number_to_currency(cart.total_price)
-
-#delete_cart{:class => 'btn',:href=>'#', 'data-cart-id' => @cart.id} Empty Cart   
- 
+    %td#total_cell= number_to_currency(cart.total_price)
+-if cart.line_items.empty?
+  %button#delete_cart{:class => 'btn',:href=>'#', 'data-cart-id' => @cart.id, :disabled => true}Empty Cart
+-else   
+  #delete_cart{:class => 'btn',:href=>'#', 'data-cart-id' => @cart.id } Empty Cart

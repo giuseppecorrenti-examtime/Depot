@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20120206100137) do
     t.integer  "user_id"
   end
 
+  add_index "carts", ["user_id"], :name => "index_carts_on_user_id", :unique => true
+
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"

@@ -1,5 +1,5 @@
-%tr
-  %td=line_item.quantity
+%tr{:class => "line_item_entry", :id =>"#{line_item.product.id}"}
+  %td#quantity=line_item.quantity
   %td
     .edit_line_item.modal.hide.fade.in
       .modal-header
@@ -12,8 +12,8 @@
             =f.number_field :quantity
           =f.actions do
             =f.submit 'Save'
-            #delete_line_item{:class => 'btn',:href=>"#", 'data-dismiss'=>"modal", 'data-line-item-id' => line_item.id} Remove from Cart
+            %button#delete_line_item{:class => 'btn',:href=>"#", 'data-dismiss'=>"modal", 'data-line-item-id' => line_item.id} Remove from Cart
             =button_tag  'Cancel', :type => 'reset', :class => 'btn'
                 
-    %a#edit{  'data-line-item-id'=> line_item.id, 'data-backdrop' => "true", 'data-controls-modal' => "event-modal", 'data-keyboard' => "true"} #{line_item.product.title}
+    %a.edit{ :id => "#{line_item.product.id}", 'data-line-item-id'=> line_item.id, 'data-backdrop' => "true", 'data-controls-modal' => "event-modal", 'data-keyboard' => "true"}#{line_item.product.title}
   %td= number_to_currency(line_item.total_price)

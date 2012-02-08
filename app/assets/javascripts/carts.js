@@ -5,7 +5,7 @@ $(document).ready(function() {
     }
   });
   
-  $(document).on('click', '#edit',function(){
+  $(document).on('click', '.edit',function(){
   	var line_item_id = $(this).attr('data-line-item-id');
   	$(this).siblings('.edit_line_item').modal('show', { backdrop: false});
   });

@@ -1,13 +1,12 @@
-<h2>Change your password</h2>
-<%= semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+<h2>Forgot your password?</h2>
+<%= semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= f.semantic_errors %>
   <%= f.inputs do %>
-    <%= f.input :password, hint:"Enter new password" %>
-    <%= f.input :password_confirmation, hint:"Confirm new password" %>
+    <%= f.input :email, hint:"Enter your email address" %>
   <% end %>
-  <%= f.hidden_field :reset_password_token %>
   <%= f.buttons do %>
-    <%= f.commit_button :button_html => {:class => "primary", :value => "Change my password"} %>
+    <%= f.commit_button :button_html => {:class => "primary", :value => "Send me reset password instructions"} %>
   <% end %>
 <% end %>
+
 <%= render "links" %>
